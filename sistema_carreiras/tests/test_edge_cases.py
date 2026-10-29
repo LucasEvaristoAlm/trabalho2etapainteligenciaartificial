@@ -23,6 +23,7 @@ from motor import (
     detectar_empate,
     top_n,
 )
+from app import perguntas_nao_respondidas
 from roadmap import (
     analisar_gaps,
     calcular_prontidao,
@@ -34,6 +35,24 @@ def base_conhecimento() -> dict[str, Any]:
     """Carrega a base de regras uma unica vez para a sessao de testes."""
     caminho_json = caminho_sistema / "regras_carreiras.json"
     return carregar_base(caminho_json)
+
+
+def test_perguntas_nao_respondidas_identifica_ausentes_e_invalidas() -> None:
+    """Perguntas vazias, fora da escala ou com tipo incorreto permanecem pendentes."""
+    perguntas = [{"id": "q1"}, {"id": "q2"}, {"id": "q3"}, {"id": "q4"}]
+    respostas = {"q1": 4, "q2": None, "q3": 6, "q4": True}
+
+    pendentes = perguntas_nao_respondidas(perguntas, respostas)
+
+    assert [pergunta["id"] for pergunta in pendentes] == ["q2", "q3", "q4"]
+
+
+def test_perguntas_nao_respondidas_aceita_todas_respostas_likert() -> None:
+    """Cada valor inteiro de 1 a 5 conta como uma resposta explícita."""
+    perguntas = [{"id": f"q{valor}"} for valor in range(1, 6)]
+    respostas = {f"q{valor}": valor for valor in range(1, 6)}
+
+    assert perguntas_nao_respondidas(perguntas, respostas) == []
 
 
 # ---------------------------------------------------------------------------
