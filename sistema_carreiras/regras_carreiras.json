@@ -1,0 +1,199 @@
+{
+  "niveis_resposta": {
+    "1": "Nenhuma afinidade",
+    "2": "Baixa afinidade",
+    "3": "Afinidade moderada",
+    "4": "Alta afinidade",
+    "5": "Afinidade muito alta"
+  },
+  "perguntas": [
+    {
+      "id": "afinidade_matematica_estatistica",
+      "texto": "Tenho facilidade e gosto de aplicar matemática, probabilidade e raciocínio estatístico na resolução de problemas.",
+      "passo": 2,
+      "categoria": "matematica_estatistica"
+    },
+    {
+      "id": "afinidade_logica_algoritmos",
+      "texto": "Gosto de desvendar quebra-cabeças lógicos complexos, estruturar algoritmos e analisar complexidade computacional.",
+      "passo": 2,
+      "categoria": "logica_algoritmos"
+    },
+    {
+      "id": "afinidade_design_visual",
+      "texto": "Tenho interesse por estética visual, paletas de cores, harmonia tipográfica e composição de telas.",
+      "passo": 2,
+      "categoria": "design_visual"
+    },
+    {
+      "id": "afinidade_experiencia_usuario",
+      "texto": "Preocupo-me com usabilidade, acessibilidade digital e em tornar a navegação simples e intuitiva para o usuário final.",
+      "passo": 2,
+      "categoria": "experiencia_usuario"
+    },
+    {
+      "id": "afinidade_infraestrutura_servidores",
+      "texto": "Gosto de entender o funcionamento de sistemas operacionais, redes, portas de comunicação e servidores físicos ou virtuais.",
+      "passo": 2,
+      "categoria": "infraestrutura_servidores"
+    },
+    {
+      "id": "afinidade_automacao",
+      "texto": "Tenho satisfação em criar scripts para automatizar tarefas manuais repetitivas e otimizar rotinas de trabalho.",
+      "passo": 2,
+      "categoria": "automacao"
+    },
+    {
+      "id": "afinidade_seguranca_sistemas",
+      "texto": "Interesso-me por segurança da informação, criptografia, identificação de brechas e proteção contra ataques cibernéticos.",
+      "passo": 2,
+      "categoria": "seguranca_sistemas"
+    },
+    {
+      "id": "afinidade_gestao_pessoas_produto",
+      "texto": "Gosto de coordenar atividades, negociar prioridades de negócio e facilitar a comunicação entre diferentes equipes.",
+      "passo": 2,
+      "categoria": "gestao_pessoas_produto"
+    },
+    {
+      "id": "afinidade_programacao_mobile",
+      "texto": "Tenho grande interesse em criar aplicativos projetados especificamente para celulares e tablets.",
+      "passo": 2,
+      "categoria": "programacao_mobile"
+    },
+    {
+      "id": "afinidade_qualidade_testes",
+      "texto": "Gosto de encontrar falhas ocultas em sistemas, criar cenários de teste e garantir conformidade com especificações técnicas.",
+      "passo": 2,
+      "categoria": "qualidade_testes"
+    },
+    {
+      "id": "afinidade_trabalho_dados",
+      "texto": "Sinto prazer em coletar, limpar, estruturar e manipular grandes conjuntos de dados para descobrir padrões.",
+      "passo": 2,
+      "categoria": "trabalho_dados"
+    },
+    {
+      "id": "afinidade_programacao_web",
+      "texto": "Gosto de desenvolver aplicações para navegadores, conectando interfaces dinâmicas com requisições e APIs web.",
+      "passo": 2,
+      "categoria": "programacao_web"
+    },
+    {
+      "id": "afinidade_computacao_nuvem",
+      "texto": "Interesso-me pela computação em nuvem, arquiteturas distribuídas e ambientes escaláveis sob demanda.",
+      "passo": 2,
+      "categoria": "computacao_nuvem"
+    },
+    {
+      "id": "afinidade_resolucao_problemas_pressao",
+      "texto": "Mantenho a clareza mental e o raciocínio investigativo para debugar incidentes críticos sob pressão de tempo.",
+      "passo": 2,
+      "categoria": "resolucao_problemas_pressao"
+    },
+    {
+      "id": "afinidade_comunicacao_clientes",
+      "texto": "Sinto-me confortável em conversar com clientes ou stakeholders para entender dores e apresentar soluções.",
+      "passo": 2,
+      "categoria": "comunicacao_clientes"
+    },
+    {
+      "id": "objetivo_liderar_equipes",
+      "texto": "Tenho como objetivo profissional liderar pessoas, definir a visão estratégica de produtos e gerenciar entregas.",
+      "passo": 3,
+      "categoria": "objetivo_carreira"
+    },
+    {
+      "id": "objetivo_dados_escala",
+      "texto": "Tenho como objetivo profissional trabalhar com inteligência analítica, aprendizado de máquina ou dados em escala massiva.",
+      "passo": 3,
+      "categoria": "objetivo_carreira"
+    },
+    {
+      "id": "objetivo_interfaces_usuarios",
+      "texto": "Tenho como objetivo profissional criar produtos visuais e experiências centradas no contato direto com o usuário.",
+      "passo": 3,
+      "categoria": "objetivo_carreira"
+    }
+  ],
+  "skills_catalogo": {
+    "python": "Python",
+    "javascript": "JavaScript",
+    "typescript": "TypeScript",
+    "java": "Java",
+    "csharp": "C#",
+    "golang": "Go",
+    "sql": "SQL e Modelagem Relacional",
+    "nosql": "Bancos NoSQL (MongoDB, Redis)",
+    "html_css": "HTML5 e CSS3",
+    "react": "React / Next.js",
+    "figma": "Figma e Prototipagem UI",
+    "linux": "Sistemas Operacionais Linux",
+    "redes": "Redes de Computadores e Protocolos TCP/IP",
+    "docker": "Docker e Conteinerizacao",
+    "kubernetes": "Kubernetes e Orquestracao",
+    "git": "Git e Versionamento de Codigo",
+    "ci_cd": "Integracao e Entrega Continuas (CI/CD)",
+    "cloud_aws_azure_gcp": "Provedores de Nuvem (AWS, Azure, GCP)",
+    "terraform": "Infraestrutura como Codigo (Terraform)",
+    "ciberseguranca_fundamentos": "Fundamentos de Seguranca e Criptografia",
+    "pentest_vulnerabilidades": "Analise de Vulnerabilidades e Pentest",
+    "estatistica_probabilidade": "Estatistica e Probabilidade Aplicada",
+    "machine_learning": "Machine Learning e Modelagem Preditiva",
+    "deep_learning_nlp": "Deep Learning e NLP",
+    "big_data_spark": "Processamento Big Data (Spark, Hadoop)",
+    "data_warehousing": "Data Warehousing e Pipelines ETL/ELT",
+    "flutter_react_native": "Desenvolvimento Mobile Hibrido (Flutter, React Native)",
+    "kotlin_swift": "Desenvolvimento Mobile Nativo (Kotlin, Swift)",
+    "testes_automatizados": "Testes Automatizados (Unitarios e Integracao)",
+    "cypress_selenium": "Automacao de QA (Cypress, Playwright, Selenium)",
+    "arquitetura_apis": "Arquitetura de Microsservicos e APIs RESTful",
+    "monitoramento_observabilidade": "Observabilidade e Monitoramento (Prometheus, Grafana)",
+    "metodologias_ageis": "Metodologias Ageis (Scrum, Kanban)",
+    "gestao_produto_metricas": "Gestao de Produto e Metricas (OKRs, KPIs)",
+    "comunicacao_storytelling": "Comunicacao com Stakeholders e Storytelling"
+  },
+  "trilhas": {
+    "backend": {
+      "nome": "Desenvolvimento Back-end",
+      "descricao": "Foco na construcao de logica de servidores, persistencia segura de dados e desenvolvimento de APIs escalaveis. Garante a confiabilidade das regras de negocio e a alta performance dos sistemas corporativos."
+    },
+    "frontend_ux": {
+      "nome": "Desenvolvimento Front-end & UX/UI",
+      "descricao": "Especializacao na criacao de interfaces visuais fluidas, responsivas e centradas na experiencia do usuario final. Combina sensibilidade estetica, acessibilidade digital e desenvolvimento eficiente com tecnologias web modernas."
+    },
+    "cientista_dados": {
+      "nome": "Ciencia de Dados & Machine Learning",
+      "descricao": "Aplicacao de metodos estatisticos rigorosos, analise exploratoria e algoritmos de inteligencia artificial para resolver problemas complexos. Transforma grandes volumes de dados brutos em modelos preditivos e insights estrategicos para a tomada de decisao."
+    },
+    "engenheiro_dados": {
+      "nome": "Engenharia de Dados & Big Data",
+      "descricao": "Construcao e operacao de arquiteturas robustas para ingestao, processamento e armazenamento analitico de dados em larga escala. Assegura a governanca, integridade e disponibilidade continua dos fluxos de dados corporativos."
+    },
+    "ciberseguranca": {
+      "nome": "Ciberseguranca & Protecao de Sistemas",
+      "descricao": "Protecao ativa de redes, sistemas operacionais e aplicacoes contra incidentes de seguranca e invasoes ciberneticas. Realiza analises de vulnerabilidade, auditorias de conformidade e execucao de contramedidas defensivas."
+    },
+    "devops_sre": {
+      "nome": "DevOps & Confiabilidade de Sites (SRE)",
+      "descricao": "Integracao continua entre desenvolvimento de software e operacoes de infraestrutura por meio de automacao e esteiras de CI/CD. Foca na estabilidade operacional, resposta rapida a incidentes e monitoramento continuo de sistemas em producao."
+    },
+    "cloud_architecture": {
+      "nome": "Arquitetura de Nuvem (Cloud)",
+      "descricao": "Planejamento e governanca de arquiteturas distribuidas, resilientes e de alta disponibilidade em ambientes de computacao em nuvem. Define padroes tecnologicos, otimizacao de custos e alinhamento das solucoes corporativas com metas de negocio."
+    },
+    "mobile": {
+      "nome": "Desenvolvimento Mobile",
+      "descricao": "Criacao de aplicativos de alta qualidade e responsividade para ecossistemas moveis iOS e Android. Prioriza a otimizacao de consumo de recursos do aparelho, interacoes por toque e consumo eficiente de dados remotos."
+    },
+    "qa": {
+      "nome": "Garantia de Qualidade & Testes (QA)",
+      "descricao": "Implementacao de estrategias abrangentes de testes manuais e automatizados para mitigar riscos de falhas de software. Assegura a qualidade contínua de releases por meio de validacoes de regressao, carga e desempenho."
+    },
+    "product_management": {
+      "nome": "Gestao de Produtos Digitais (PM/PO)",
+      "descricao": "Lideranca estrategica no ciclo de vida de produtos digitais, conectando objetivos comerciais e necessidades reais dos clientes. Conduz a priorizacao de entregas da equipe de engenharia e acompanha metricas de impacto no mercado."
+    }
+  },
+  "regras_conflito": []
+}
