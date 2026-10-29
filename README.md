@@ -6,7 +6,8 @@ Projeto prático desenvolvido para a disciplina de Inteligência Artificial.
 
 Para instruções completas sobre o sistema especialista, arquitetura, base de conhecimento e execução, acesse o diretório [`sistema_carreiras/`](./sistema_carreiras/).
 
-### Estrutura do Projeto
+## Estrutura do Projeto
+
 - [`sistema_carreiras/`](./sistema_carreiras/): Código-fonte e artefatos do sistema.
   - `regras_carreiras.json`: Base de conhecimento declarativa.
   - `motor.py`: Motor de inferência e cálculo de pontuação ponderada.
