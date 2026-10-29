@@ -103,7 +103,7 @@ def calcular_compatibilidade(
     """
     # Validacao de robustez dos valores fornecidos
     for qid, val in respostas.items():
-        if not isinstance(val, (int, float)) or int(val) < 1 or int(val) > 5:
+        if not isinstance(val, int) or isinstance(val, bool) or not 1 <= val <= 5:
             raise ValueError(
                 f"Valor de resposta invalido para a pergunta '{qid}': {val}. "
                 "As respostas devem ser inteiros entre 1 e 5."
@@ -283,29 +283,14 @@ def gerar_justificativa(
 
 
 if __name__ == "__main__":
-    # Teste de demonstracao com perfil com alta afinidade para DevOps / SRE
     base_conhecimento = carregar_base(Path(__file__).parent / "regras_carreiras.json")
-
-    perfil_devops = {
-        "afinidade_automacao": 5,
-        "afinidade_infraestrutura_servidores": 5,
-        "afinidade_resolucao_problemas_pressao": 5,
-        "afinidade_computacao_nuvem": 4,
-        "afinidade_seguranca_sistemas": 4,
-        "afinidade_design_visual": 1,
-        "objetivo_interfaces_usuarios": 1,
-        "objetivo_liderar_equipes": 2,
-        "afinidade_logica_algoritmos": 4,
-        "afinidade_programacao_web": 3,
-        "afinidade_trabalho_dados": 3,
-    }
-
-    resultado_simulacao = calcular_compatibilidade(perfil_devops, base_conhecimento)
+    perfil_neutro = {pergunta["id"]: 3 for pergunta in base_conhecimento["perguntas"]}
+    resultado_simulacao = calcular_compatibilidade(perfil_neutro, base_conhecimento)
     melhores = top_n(resultado_simulacao, n=3)
     empates = detectar_empate(melhores, margem=5.0)
 
     print("=" * 70)
-    print("SIMULACAO DE MOTOR DE INFERENCIA - PERFIL DEVOPS/SRE")
+    print("SIMULACAO DE MOTOR DE INFERENCIA - PERFIL NEUTRO")
     print("=" * 70)
 
     for posicao, (tid, info) in enumerate(melhores, start=1):

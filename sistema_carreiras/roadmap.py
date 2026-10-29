@@ -272,18 +272,9 @@ def formatar_roadmap_markdown(
 
 if __name__ == "__main__":
     base_dados = carregar_base(Path(__file__).parent / "regras_carreiras.json")
-    trilha_exemplo = "devops_sre"
-
-    # Perfil simulado: usuario com algumas skills parciais para DevOps
-    # Exigencias de devops_sre: linux: 2, docker: 2, git: 2, ci_cd: 2, monitoramento: 1, cloud: 1 (Total = 10 niveis)
-    skills_usuario_exemplo = {
-        "git": 2,  # atende (2/2)
-        "linux": 1,  # gap de 1 nivel (1/2)
-        "docker": 0,  # gap de 2 niveis (0/2)
-        "ci_cd": 0,  # gap de 2 niveis (0/2)
-        "monitoramento_observabilidade": 1,  # atende (1/1)
-        "cloud_aws_azure_gcp": 0,  # gap de 1 nivel (0/1)
-    }
+    trilha_exemplo = next(iter(base_dados["trilhas"]))
+    skills_junior = base_dados["trilhas"][trilha_exemplo]["skills_junior"]
+    skills_usuario_exemplo = {sid: 0 for sid in skills_junior}
 
     gaps_identificados = analisar_gaps(trilha_exemplo, skills_usuario_exemplo, base_dados)
     prontidao_calculada = calcular_prontidao(
@@ -295,7 +286,7 @@ if __name__ == "__main__":
     )
 
     print("=" * 70)
-    print("SIMULACAO DO MODULO ROADMAP.PY - TRILHA DEVOPS_SRE")
+    print(f"SIMULACAO DO MODULO ROADMAP.PY - TRILHA {trilha_exemplo.upper()}")
     print("=" * 70)
     print(f"Prontidao Calculada: {prontidao_calculada}%")
     print(f"Total de Gaps: {len(gaps_identificados)}")

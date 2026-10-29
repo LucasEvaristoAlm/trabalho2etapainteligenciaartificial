@@ -149,7 +149,7 @@ sistema_carreiras/
 ├── roadmap.py                  <- Gerador de gaps e planos de estudo
 ├── app.py                      <- Interface Streamlit (wizard 4 passos)
 ├── tests/
-│   └── test_edge_cases.py      <- 12 testes automatizados com pytest
+│   └── test_edge_cases.py      <- 16 testes automatizados com pytest
 ├── requirements.txt            <- Dependencias: streamlit, pandas, plotly, pytest
 └── README.md                   <- Esta documentacao
 validar_base.py                 <- Script de validacao estrutural do JSON
@@ -257,7 +257,7 @@ Depois referencie `"solidity"` em `skills_junior` da trilha desejada.
 
 ## Resultados dos Testes de Casos Limite
 
-Suíte completa em `sistema_carreiras/tests/test_edge_cases.py` — **12/12 testes aprovados**.
+Suíte completa em `sistema_carreiras/tests/test_edge_cases.py` — **16/16 testes aprovados**.
 
 | # | Cenario | Validacao | Resultado |
 |---|---------|-----------|-----------|
@@ -267,7 +267,7 @@ Suíte completa em `sistema_carreiras/tests/test_edge_cases.py` — **12/12 test
 | 4 | **Tudo 1 (minimo)** | Nenhuma trilha com pct abaixo de 0% | PASSOU |
 | 5 | **Perfil conflitante** (design=5, logica=1, infra=1) | `frontend_ux` lidera; penalidades registradas em `ciberseguranca` e `devops_sre` | PASSOU |
 | 6 | **Respostas parciais** (9 de 18 perguntas) | 10 trilhas retornadas sem excecao; perguntas omissas ignoradas | PASSOU |
-| 7 | **Valor invalido** (0, 6, -1, 10) | `ValueError` com mensagem "1 e 5" em todos os casos | PASSOU (4 parametrizados) |
+| 7 | **Valor invalido** (fora da faixa, fracionario, tipo incorreto ou booleano) | `ValueError` para respostas que nao sejam inteiros entre 1 e 5 | PASSOU (8 parametrizados) |
 | 8 | **Atende todos skills junior** | `gaps == []` e `prontidao == 100.0%` | PASSOU |
 | 9 | **Integridade da base** | 10 trilhas do contrato; pesos em [-1,1]; IDs de perguntas e skills validos; roadmaps completos | PASSOU |
 
@@ -312,7 +312,7 @@ feat(roadmap): implementacao do modulo de gaps, prontidao e roadmaps em markdown
 
 feat(app): interface Streamlit com wizard em 4 etapas, radar chart e roadmap integrado
 
-test: suite de 12 testes de casos de borda com pytest - 12/12 aprovados
+test: suite de 16 testes de casos de borda com pytest - 16/16 aprovados
 
 docs: README completo com arquitetura, formulas, exemplos e instrucoes de extensao
 ```

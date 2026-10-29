@@ -181,11 +181,13 @@ def test_respostas_parciais_sem_excecao(base_conhecimento: dict[str, Any]) -> No
 # ---------------------------------------------------------------------------
 # Cenario 7: Valor invalido (fora da escala 1 a 5)
 # ---------------------------------------------------------------------------
-@pytest.mark.parametrize("valor_invalido", [0, 6, -1, 10])
+@pytest.mark.parametrize(
+    "valor_invalido", [0, 6, -1, 10, 1.5, 3.0, "3", True]
+)
 def test_valor_invalido_lanca_value_error(
-    base_conhecimento: dict[str, Any], valor_invalido: int
+    base_conhecimento: dict[str, Any], valor_invalido: Any
 ) -> None:
-    """Respostas fora do intervalo 1-5 devem levantar ValueError com explicacao."""
+    """Respostas fora da escala inteira 1-5 devem levantar ValueError."""
     respostas = {"afinidade_automacao": valor_invalido}
 
     with pytest.raises(ValueError) as excinfo:
