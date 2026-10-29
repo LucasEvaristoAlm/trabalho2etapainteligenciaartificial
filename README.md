@@ -6,7 +6,7 @@ Projeto prático desenvolvido para a disciplina de Inteligência Artificial.
 
 ### Identificação do aluno
 - **Nome:** Lucas Evaristo Almeida de Paula
-- **Universidade:** Universidade Presidente Antonio Carlos
+- **Universidade:** Universidade Presidente Antonio Carlos - Barbacena - Campus Santa Tereza
 - **Período:** 6º
 - **Matrícula:** 221-000933
 
