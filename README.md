@@ -4,6 +4,12 @@
 
 Projeto prático desenvolvido para a disciplina de Inteligência Artificial.
 
+### Identificação do aluno
+- **Nome:** Lucas Evaristo Almeida de Paula
+- **Universidade:** Universidade Presidente Antonio Carlos
+- **Período:** 6º
+- **Matrícula:** 221-000933
+
 Para instruções completas sobre o sistema especialista, arquitetura, base de conhecimento e execução, acesse o diretório [`sistema_carreiras/`](./sistema_carreiras/).
 
 ### Estrutura do Projeto
