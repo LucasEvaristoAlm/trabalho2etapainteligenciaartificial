@@ -156,44 +156,449 @@
   "trilhas": {
     "backend": {
       "nome": "Desenvolvimento Back-end",
-      "descricao": "Foco na construcao de logica de servidores, persistencia segura de dados e desenvolvimento de APIs escalaveis. Garante a confiabilidade das regras de negocio e a alta performance dos sistemas corporativos."
+      "descricao": "Foco na construcao de logica de servidores, persistencia segura de dados e desenvolvimento de APIs escalaveis. Garante a confiabilidade das regras de negocio e a alta performance dos sistemas corporativos.",
+      "pesos": {
+        "afinidade_logica_algoritmos": 0.9,
+        "afinidade_programacao_web": 0.8,
+        "afinidade_trabalho_dados": 0.6,
+        "afinidade_infraestrutura_servidores": 0.5,
+        "afinidade_qualidade_testes": 0.4,
+        "afinidade_design_visual": -0.7,
+        "objetivo_interfaces_usuarios": -0.5
+      },
+      "skills_junior": {
+        "python": 2,
+        "sql": 2,
+        "git": 2,
+        "docker": 1,
+        "arquitetura_apis": 2,
+        "testes_automatizados": 1
+      },
+      "roadmap": {
+        "tecnologias": [
+          "Git e Versionamento",
+          "Linguagem de Programacao (Python/Java/C#/Go)",
+          "Bancos de Dados Relacionais e SQL",
+          "Arquitetura de APIs RESTful",
+          "Docker e Conteinerizacao",
+          "Testes Automatizados Unitarios"
+        ],
+        "certificacoes": [
+          "Oracle Certified Associate: Java Programmer",
+          "AWS Certified Developer - Associate"
+        ],
+        "projeto": "API RESTful completa de e-commerce com autenticacao JWT, persistencia em PostgreSQL, conteinerizacao em Docker e testes automatizados cobrindo fluxos de checkout."
+      }
     },
     "frontend_ux": {
       "nome": "Desenvolvimento Front-end & UX/UI",
-      "descricao": "Especializacao na criacao de interfaces visuais fluidas, responsivas e centradas na experiencia do usuario final. Combina sensibilidade estetica, acessibilidade digital e desenvolvimento eficiente com tecnologias web modernas."
+      "descricao": "Especializacao na criacao de interfaces visuais fluidas, responsivas e centradas na experiencia do usuario final. Combina sensibilidade estetica, acessibilidade digital e desenvolvimento eficiente com tecnologias web modernas.",
+      "pesos": {
+        "afinidade_design_visual": 0.9,
+        "afinidade_experiencia_usuario": 0.95,
+        "afinidade_programacao_web": 0.85,
+        "objetivo_interfaces_usuarios": 0.9,
+        "afinidade_infraestrutura_servidores": -0.6,
+        "afinidade_matematica_estatistica": -0.5,
+        "objetivo_dados_escala": -0.6
+      },
+      "skills_junior": {
+        "html_css": 2,
+        "javascript": 2,
+        "react": 2,
+        "figma": 2,
+        "git": 1,
+        "testes_automatizados": 1
+      },
+      "roadmap": {
+        "tecnologias": [
+          "HTML5 Semantico e CSS3 Avancado (Flexbox/Grid)",
+          "JavaScript ES6+ e TypeScript",
+          "React e Frameworks Reativos",
+          "Prototipagem no Figma e Design Tokens",
+          "Testes de Componentes e Integracao E2E"
+        ],
+        "certificacoes": [
+          "Meta Front-End Developer Professional Certificate",
+          "Google UX Design Professional Certificate"
+        ],
+        "projeto": "Dashboard analitico responsivo com suporte a dark mode, prototipado no Figma, desenvolvido com React/TypeScript e integrado a API publica com testes de interface."
+      }
     },
     "cientista_dados": {
       "nome": "Ciencia de Dados & Machine Learning",
-      "descricao": "Aplicacao de metodos estatisticos rigorosos, analise exploratoria e algoritmos de inteligencia artificial para resolver problemas complexos. Transforma grandes volumes de dados brutos em modelos preditivos e insights estrategicos para a tomada de decisao."
+      "descricao": "Aplicacao de metodos estatisticos rigorosos, analise exploratoria e algoritmos de inteligencia artificial para resolver problemas complexos. Transforma grandes volumes de dados brutos em modelos preditivos e insights estrategicos para a tomada de decisao.",
+      "pesos": {
+        "afinidade_matematica_estatistica": 0.95,
+        "afinidade_trabalho_dados": 0.85,
+        "afinidade_logica_algoritmos": 0.7,
+        "objetivo_dados_escala": 0.9,
+        "afinidade_comunicacao_clientes": 0.4,
+        "afinidade_design_visual": -0.5,
+        "afinidade_infraestrutura_servidores": -0.3
+      },
+      "skills_junior": {
+        "python": 2,
+        "sql": 2,
+        "estatistica_probabilidade": 2,
+        "machine_learning": 2,
+        "git": 1,
+        "comunicacao_storytelling": 1
+      },
+      "roadmap": {
+        "tecnologias": [
+          "Python para Analise de Dados (Pandas, NumPy)",
+          "Estatistica Descritiva e Inferencial",
+          "Analise Exploratoria e Visualizacao de Dados",
+          "Modelagem Preditiva com Scikit-Learn",
+          "Validacao de Modelos e Storytelling de Negocio"
+        ],
+        "certificacoes": [
+          "Google Professional Data Scientist",
+          "IBM Data Science Professional Certificate"
+        ],
+        "projeto": "Pipeline preditivo de churn de clientes com analise exploratoria aprofundada, balanceamento de classes, modelagem preditiva e relatorio visual interativo."
+      }
     },
     "engenheiro_dados": {
       "nome": "Engenharia de Dados & Big Data",
-      "descricao": "Construcao e operacao de arquiteturas robustas para ingestao, processamento e armazenamento analitico de dados em larga escala. Assegura a governanca, integridade e disponibilidade continua dos fluxos de dados corporativos."
+      "descricao": "Construcao e operacao de arquiteturas robustas para ingestao, processamento e armazenamento analitico de dados em larga escala. Assegura a governanca, integridade e disponibilidade continua dos fluxos de dados corporativos.",
+      "pesos": {
+        "afinidade_trabalho_dados": 0.95,
+        "afinidade_infraestrutura_servidores": 0.75,
+        "afinidade_automacao": 0.8,
+        "afinidade_computacao_nuvem": 0.7,
+        "objetivo_dados_escala": 0.85,
+        "afinidade_matematica_estatistica": 0.4,
+        "afinidade_design_visual": -0.7
+      },
+      "skills_junior": {
+        "python": 2,
+        "sql": 2,
+        "data_warehousing": 2,
+        "big_data_spark": 1,
+        "docker": 1,
+        "git": 1
+      },
+      "roadmap": {
+        "tecnologias": [
+          "Modelagem Dimensional e SQL Avancado",
+          "Python para Automacao de Dados",
+          "Data Warehousing e Data Lakes",
+          "Pipelines de ETL com Apache Airflow",
+          "Processamento Distribuido com Apache Spark"
+        ],
+        "certificacoes": [
+          "Google Professional Data Engineer",
+          "Databricks Certified Associate Developer for Apache Spark"
+        ],
+        "projeto": "Pipeline de ETL automatizado que extrai dados publicos via API, normaliza e persiste em Data Lake (Parquet) e carrega em Data Warehouse analitico com Airflow."
+      }
     },
     "ciberseguranca": {
       "nome": "Ciberseguranca & Protecao de Sistemas",
-      "descricao": "Protecao ativa de redes, sistemas operacionais e aplicacoes contra incidentes de seguranca e invasoes ciberneticas. Realiza analises de vulnerabilidade, auditorias de conformidade e execucao de contramedidas defensivas."
+      "descricao": "Protecao ativa de redes, sistemas operacionais e aplicacoes contra incidentes de seguranca e invasoes ciberneticas. Realiza analises de vulnerabilidade, auditorias de conformidade e execucao de contramedidas defensivas.",
+      "pesos": {
+        "afinidade_seguranca_sistemas": 0.95,
+        "afinidade_infraestrutura_servidores": 0.8,
+        "afinidade_resolucao_problemas_pressao": 0.75,
+        "afinidade_automacao": 0.5,
+        "afinidade_logica_algoritmos": 0.5,
+        "afinidade_design_visual": -0.8,
+        "objetivo_interfaces_usuarios": -0.6
+      },
+      "skills_junior": {
+        "ciberseguranca_fundamentos": 2,
+        "redes": 2,
+        "linux": 2,
+        "pentest_vulnerabilidades": 1,
+        "git": 1,
+        "python": 1
+      },
+      "roadmap": {
+        "tecnologias": [
+          "Redes TCP/IP e Analise de Pacotes",
+          "Administracao Segura de Linux",
+          "Criptografia e Gestao de Acessos",
+          "Analise de Vulnerabilidades e OWASP Top 10",
+          "Scripting em Python para Seguranca Ofensiva/Defensiva"
+        ],
+        "certificacoes": [
+          "CompTIA Security+",
+          "Certified Ethical Hacker (CEH)"
+        ],
+        "projeto": "Ferramenta em Python para varredura automatizada de vulnerabilidades em servidores web, mapeando portas abertas, cabecalhos inseguros e gerando relatorio de risco."
+      }
     },
     "devops_sre": {
       "nome": "DevOps & Confiabilidade de Sites (SRE)",
-      "descricao": "Integracao continua entre desenvolvimento de software e operacoes de infraestrutura por meio de automacao e esteiras de CI/CD. Foca na estabilidade operacional, resposta rapida a incidentes e monitoramento continuo de sistemas em producao."
+      "descricao": "Integracao continua entre desenvolvimento de software e operacoes de infraestrutura por meio de automacao e esteiras de CI/CD. Foca na estabilidade operacional, resposta rapida a incidentes e monitoramento continuo de sistemas em producao.",
+      "pesos": {
+        "afinidade_automacao": 0.95,
+        "afinidade_infraestrutura_servidores": 0.9,
+        "afinidade_resolucao_problemas_pressao": 0.85,
+        "afinidade_computacao_nuvem": 0.75,
+        "afinidade_seguranca_sistemas": 0.5,
+        "afinidade_design_visual": -0.8,
+        "objetivo_interfaces_usuarios": -0.7,
+        "objetivo_liderar_equipes": -0.2
+      },
+      "skills_junior": {
+        "linux": 2,
+        "docker": 2,
+        "git": 2,
+        "ci_cd": 2,
+        "monitoramento_observabilidade": 1,
+        "cloud_aws_azure_gcp": 1
+      },
+      "roadmap": {
+        "tecnologias": [
+          "Linux Avancado e Shell Scripting",
+          "Docker e Criacao de Imagens Otimizadas",
+          "Esteiras de CI/CD (GitHub Actions / GitLab)",
+          "Kubernetes e Orquestracao Basica",
+          "Monitoramento e Alarmes (Prometheus e Grafana)"
+        ],
+        "certificacoes": [
+          "CKA: Certified Kubernetes Administrator",
+          "AWS Certified DevOps Engineer - Professional"
+        ],
+        "projeto": "Esteira completa de CI/CD no GitHub Actions que compila, executa testes, gera imagem Docker com scan de seguranca e realiza deploy automatizado com metricas de uptime."
+      }
     },
     "cloud_architecture": {
       "nome": "Arquitetura de Nuvem (Cloud)",
-      "descricao": "Planejamento e governanca de arquiteturas distribuidas, resilientes e de alta disponibilidade em ambientes de computacao em nuvem. Define padroes tecnologicos, otimizacao de custos e alinhamento das solucoes corporativas com metas de negocio."
+      "descricao": "Planejamento e governanca de arquiteturas distribuidas, resilientes e de alta disponibilidade em ambientes de computacao em nuvem. Define padroes tecnologicos, otimizacao de custos e alinhamento das solucoes corporativas com metas de negocio.",
+      "pesos": {
+        "afinidade_computacao_nuvem": 0.95,
+        "afinidade_infraestrutura_servidores": 0.8,
+        "afinidade_seguranca_sistemas": 0.65,
+        "afinidade_comunicacao_clientes": 0.6,
+        "afinidade_automacao": 0.5,
+        "afinidade_resolucao_problemas_pressao": 0.4,
+        "afinidade_design_visual": -0.7,
+        "objetivo_interfaces_usuarios": -0.6
+      },
+      "skills_junior": {
+        "cloud_aws_azure_gcp": 2,
+        "terraform": 2,
+        "redes": 2,
+        "docker": 1,
+        "linux": 1,
+        "arquitetura_apis": 1
+      },
+      "roadmap": {
+        "tecnologias": [
+          "Pilares do Cloud Architecture Framework",
+          "Redes em Nuvem (VPCs, Subnets, Gateways)",
+          "Infraestrutura como Codigo com Terraform",
+          "Armazenamento e Bancos Gerenciados em Nuvem",
+          "Boas Praticas de FinOps e Alta Disponibilidade"
+        ],
+        "certificacoes": [
+          "AWS Certified Solutions Architect - Associate",
+          "Microsoft Certified: Azure Solutions Architect Expert"
+        ],
+        "projeto": "Infraestrutura corporativa em nuvem provisionada 100% via modulos Terraform com alta disponibilidade multi-AZ, load balancer, VPC isolada e banco gerenciado."
+      }
     },
     "mobile": {
       "nome": "Desenvolvimento Mobile",
-      "descricao": "Criacao de aplicativos de alta qualidade e responsividade para ecossistemas moveis iOS e Android. Prioriza a otimizacao de consumo de recursos do aparelho, interacoes por toque e consumo eficiente de dados remotos."
+      "descricao": "Criacao de aplicativos de alta qualidade e responsividade para ecossistemas moveis iOS e Android. Prioriza a otimizacao de consumo de recursos do aparelho, interacoes por toque e consumo eficiente de dados remotos.",
+      "pesos": {
+        "afinidade_programacao_mobile": 0.95,
+        "afinidade_experiencia_usuario": 0.75,
+        "afinidade_logica_algoritmos": 0.6,
+        "objetivo_interfaces_usuarios": 0.7,
+        "afinidade_design_visual": 0.5,
+        "afinidade_infraestrutura_servidores": -0.5,
+        "objetivo_dados_escala": -0.5
+      },
+      "skills_junior": {
+        "flutter_react_native": 2,
+        "kotlin_swift": 1,
+        "git": 2,
+        "figma": 1,
+        "arquitetura_apis": 1,
+        "testes_automatizados": 1
+      },
+      "roadmap": {
+        "tecnologias": [
+          "Linguagem Base Mobile (Dart ou JavaScript/TypeScript)",
+          "Framework Multiplataforma (Flutter ou React Native)",
+          "Gerenciamento de Estado Reativo",
+          "Consumo de APIs RESTful e Armazenamento Local",
+          "Publicacao e Boas Praticas em App Stores"
+        ],
+        "certificacoes": [
+          "Meta React Native Specialization",
+          "Google Associate Android Developer"
+        ],
+        "projeto": "Aplicativo multiplataforma em Flutter/React Native com autenticacao biometrica, armazenamento local off-line, consumo de API remota e interface fluida baseada no Figma."
+      }
     },
     "qa": {
       "nome": "Garantia de Qualidade & Testes (QA)",
-      "descricao": "Implementacao de estrategias abrangentes de testes manuais e automatizados para mitigar riscos de falhas de software. Assegura a qualidade contínua de releases por meio de validacoes de regressao, carga e desempenho."
+      "descricao": "Implementacao de estrategias abrangentes de testes manuais e automatizados para mitigar riscos de falhas de software. Assegura a qualidade contínua de releases por meio de validacoes de regressao, carga e desempenho.",
+      "pesos": {
+        "afinidade_qualidade_testes": 0.95,
+        "afinidade_automacao": 0.75,
+        "afinidade_logica_algoritmos": 0.6,
+        "afinidade_resolucao_problemas_pressao": 0.5,
+        "afinidade_experiencia_usuario": 0.4,
+        "afinidade_design_visual": -0.4,
+        "objetivo_liderar_equipes": -0.4
+      },
+      "skills_junior": {
+        "testes_automatizados": 2,
+        "cypress_selenium": 2,
+        "git": 2,
+        "python": 1,
+        "sql": 1,
+        "arquitetura_apis": 1
+      },
+      "roadmap": {
+        "tecnologias": [
+          "Fundamentos e Niveis de Teste de Software",
+          "Criacao de Planos e Casos de Teste Estruturados",
+          "Testes de APIs RESTful com Postman e Newman",
+          "Automacao de Testes E2E com Cypress ou Playwright",
+          "Integracao de Testes na Esteira de CI/CD"
+        ],
+        "certificacoes": [
+          "ISTQB Certified Tester Foundation Level (CTFL)",
+          "Postman API Fundamentals Student Expert"
+        ],
+        "projeto": "Framework de testes automatizados com Cypress e Postman cobrindo testes de regressao de interface e testes de carga/contrato de API com relatorios integrados ao CI/CD."
+      }
     },
     "product_management": {
       "nome": "Gestao de Produtos Digitais (PM/PO)",
-      "descricao": "Lideranca estrategica no ciclo de vida de produtos digitais, conectando objetivos comerciais e necessidades reais dos clientes. Conduz a priorizacao de entregas da equipe de engenharia e acompanha metricas de impacto no mercado."
+      "descricao": "Lideranca estrategica no ciclo de vida de produtos digitais, conectando objetivos comerciais e necessidades reais dos clientes. Conduz a priorizacao de entregas da equipe de engenharia e acompanha metricas de impacto no mercado.",
+      "pesos": {
+        "afinidade_gestao_pessoas_produto": 0.95,
+        "objetivo_liderar_equipes": 0.9,
+        "afinidade_comunicacao_clientes": 0.85,
+        "afinidade_experiencia_usuario": 0.7,
+        "afinidade_trabalho_dados": 0.5,
+        "afinidade_logica_algoritmos": -0.4,
+        "afinidade_infraestrutura_servidores": -0.6,
+        "afinidade_seguranca_sistemas": -0.4
+      },
+      "skills_junior": {
+        "gestao_produto_metricas": 2,
+        "metodologias_ageis": 2,
+        "comunicacao_storytelling": 2,
+        "figma": 1,
+        "sql": 1,
+        "git": 1
+      },
+      "roadmap": {
+        "tecnologias": [
+          "Product Discovery e Validacao de Hipoteses",
+          "Frameworks Ageis (Scrum, Kanban) e Backlog",
+          "Definicao de Metricas e KPIs (OKRs, North Star)",
+          "Consultas Basicas em SQL para Analise de Produto",
+          "Storytelling e Gestao de Stakeholders"
+        ],
+        "certificacoes": [
+          "Professional Scrum Product Owner (PSPO I)",
+          "Certified Product Manager (CPM - AIPMM)"
+        ],
+        "projeto": "Documento completo de especificacao de produto (PRD) com pesquisa de mercado, matriz de priorizacao RICE, wireframes no Figma e plano de experimentacao para lancamento de MVP."
+      }
     }
   },
-  "regras_conflito": []
+  "regras_conflito": [
+    {
+      "se": {
+        "afinidade_design_visual": ">=4",
+        "afinidade_seguranca_sistemas": "<=2"
+      },
+      "trilha": "ciberseguranca",
+      "penalidade": 0.2,
+      "motivo": "Forte afinidade por estetica visual combinada com baixo interesse por protecao de sistemas destoa do perfil tecnico exigido em ciberseguranca."
+    },
+    {
+      "se": {
+        "afinidade_design_visual": "<=2",
+        "afinidade_experiencia_usuario": "<=2"
+      },
+      "trilha": "frontend_ux",
+      "penalidade": 0.25,
+      "motivo": "Baixo interesse concomitante em apelo estetico visual e usabilidade compromete a atuacao central em Front-end e UX."
+    },
+    {
+      "se": {
+        "afinidade_matematica_estatistica": "<=2",
+        "afinidade_trabalho_dados": "<=2"
+      },
+      "trilha": "cientista_dados",
+      "penalidade": 0.25,
+      "motivo": "Ciencia de Dados exige pensamento quantitativo e afinidade no tratamento de dados; indices baixos em ambos indicam incompatibilidade."
+    },
+    {
+      "se": {
+        "afinidade_infraestrutura_servidores": "<=2",
+        "afinidade_automacao": "<=2"
+      },
+      "trilha": "devops_sre",
+      "penalidade": 0.25,
+      "motivo": "DevOps e SRE operam sobre alicerces de sistemas operacionais, infraestrutura e automacao recorrente por scripts."
+    },
+    {
+      "se": {
+        "afinidade_computacao_nuvem": "<=2",
+        "afinidade_infraestrutura_servidores": "<=2"
+      },
+      "trilha": "cloud_architecture",
+      "penalidade": 0.2,
+      "motivo": "Arquitetura Cloud pressupoe interesse pronunciado em ambientes de computacao em nuvem e topologias de servidores."
+    },
+    {
+      "se": {
+        "afinidade_programacao_mobile": "<=2",
+        "objetivo_interfaces_usuarios": "<=2"
+      },
+      "trilha": "mobile",
+      "penalidade": 0.2,
+      "motivo": "Desenvolvimento Mobile requer dedicacao ao ecossistema de smartphones e criacao de interfaces para usuarios finais."
+    },
+    {
+      "se": {
+        "afinidade_qualidade_testes": "<=2",
+        "afinidade_resolucao_problemas_pressao": "<=2"
+      },
+      "trilha": "qa",
+      "penalidade": 0.2,
+      "motivo": "Garantia de Qualidade demanda investigacao minuciosa de defeitos e firmeza operacional durante validacoes de deploy."
+    },
+    {
+      "se": {
+        "afinidade_gestao_pessoas_produto": "<=2",
+        "afinidade_comunicacao_clientes": "<=2"
+      },
+      "trilha": "product_management",
+      "penalidade": 0.25,
+      "motivo": "Product Management sustenta-se na articulacao com pessoas, alinhamento de stakeholders e negociacao de demandas de clientes."
+    },
+    {
+      "se": {
+        "afinidade_logica_algoritmos": "<=2",
+        "afinidade_programacao_web": "<=2"
+      },
+      "trilha": "backend",
+      "penalidade": 0.2,
+      "motivo": "Desenvolvimento Back-end demanda solido raciocinio algoritmico e compreensao de protocolos e aplicacoes web."
+    },
+    {
+      "se": {
+        "afinidade_trabalho_dados": "<=2",
+        "afinidade_infraestrutura_servidores": "<=2"
+      },
+      "trilha": "engenheiro_dados",
+      "penalidade": 0.2,
+      "motivo": "Engenharia de Dados necessita de familiaridade com ingestao de dados e administracao de maquinas/servidores de processamento."
+    }
+  ]
 }
