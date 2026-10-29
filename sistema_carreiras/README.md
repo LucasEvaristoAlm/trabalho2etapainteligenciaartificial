@@ -4,13 +4,13 @@ Projeto desenvolvido para a disciplina de **Inteligência Artificial**, com o ob
 
 ---
 
-## 🎯 Objetivo do Projeto
+## Objetivo do Projeto
 
 Auxiliar estudantes e profissionais de tecnologia na identificação da área mais adequada ao seu perfil, competências e preferências, por meio de um **motor de inferência baseado em regras com pontuação ponderada e penalidades**. O sistema avalia respostas fornecidas em um questionário estruturado e projeta recomendações detalhadas, habilidades faltantes e um roadmap prático para atingir os objetivos profissionais.
 
 ---
 
-## 🧠 Arquitetura e Diretrizes do Sistema Especialista
+## Arquitetura e Diretrizes do Sistema Especialista
 
 - **Base de Conhecimento Desacoplada**: 100% das regras, pesos, perguntas, competências (skills) e roadmaps residem no arquivo `regras_carreiras.json`. O código Python atua puramente como motor de execução e interface, sem regras embutidas (*hardcoded*).
 - **Motor Próprio de Inferência**: Algoritmo customizado de pontuação ponderada e aplicação de penalidades, operando sem dependência de bibliotecas legadas (como Experta).
@@ -29,7 +29,7 @@ Auxiliar estudantes e profissionais de tecnologia na identificação da área ma
 
 ---
 
-## 📁 Estrutura do Repositório
+## Estrutura do Repositório
 
 ```text
 sistema_carreiras/
@@ -46,7 +46,7 @@ sistema_carreiras/
 
 ---
 
-## 🚀 Instalação e Execução
+## Instalação e Execução
 
 ### Pré-requisitos
 - Python 3.10 ou superior
