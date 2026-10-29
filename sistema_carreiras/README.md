@@ -149,7 +149,7 @@ sistema_carreiras/
 ├── roadmap.py                  <- Gerador de gaps e planos de estudo
 ├── app.py                      <- Interface Streamlit (wizard 4 passos)
 ├── tests/
-│   └── test_edge_cases.py      <- 18 testes automatizados com pytest
+│   └── test_edge_cases.py      <- 20 testes automatizados com pytest
 ├── requirements.txt            <- Dependencias: streamlit, pandas, plotly, pytest
 └── README.md                   <- Esta documentacao
 validar_base.py                 <- Script de validacao estrutural do JSON
@@ -257,7 +257,7 @@ Depois referencie `"solidity"` em `skills_junior` da trilha desejada.
 
 ## Resultados dos Testes de Casos Limite
 
-Suíte completa em `sistema_carreiras/tests/test_edge_cases.py` — **18/18 testes aprovados**.
+Suíte completa em `sistema_carreiras/tests/test_edge_cases.py` — **20/20 testes aprovados**.
 
 | # | Cenario | Validacao | Resultado |
 |---|---------|-----------|-----------|
@@ -270,7 +270,7 @@ Suíte completa em `sistema_carreiras/tests/test_edge_cases.py` — **18/18 test
 | 7 | **Valor invalido** (fora da faixa, fracionario, tipo incorreto ou booleano) | `ValueError` para respostas que nao sejam inteiros entre 1 e 5 | PASSOU (8 parametrizados) |
 | 8 | **Atende todos skills junior** | `gaps == []` e `prontidao == 100.0%` | PASSOU |
 | 9 | **Integridade da base** | 10 trilhas do contrato; pesos em [-1,1]; IDs de perguntas e skills validos; roadmaps completos | PASSOU |
-| 10 | **Questionário obrigatório** | Respostas ausentes, inválidas e booleanas impedem avanço; valores Likert inteiros válidos são aceitos | PASSOU |
+| 10 | **Campos obrigatórios do perfil e questionário** | Não permite pular o perfil ou etapas com respostas pendentes, inclusive ao tentar acessar o resultado diretamente | PASSOU |
 
 ---
 
@@ -313,7 +313,7 @@ feat(roadmap): implementacao do modulo de gaps, prontidao e roadmaps em markdown
 
 feat(app): interface Streamlit com wizard em 4 etapas, radar chart e roadmap integrado
 
-test: suite de 18 testes de casos de borda com pytest - 18/18 aprovados
+test: suite de 20 testes de casos de borda com pytest - 20/20 aprovados
 
 docs: README completo com arquitetura, formulas, exemplos e instrucoes de extensao
 ```

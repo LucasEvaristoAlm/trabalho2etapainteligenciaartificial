@@ -23,11 +23,17 @@ from motor import (
     detectar_empate,
     top_n,
 )
-from app import perguntas_nao_respondidas
+from app import (
+    EXPERIENCIA_NAO_SELECIONADA,
+    OPCOES_EXPERIENCIA,
+    perguntas_nao_respondidas,
+    perfil_completo,
+)
 from roadmap import (
     analisar_gaps,
     calcular_prontidao,
 )
+from streamlit.testing.v1 import AppTest
 
 
 @pytest.fixture(scope="session")
@@ -53,6 +59,68 @@ def test_perguntas_nao_respondidas_aceita_todas_respostas_likert() -> None:
     respostas = {f"q{valor}": valor for valor in range(1, 6)}
 
     assert perguntas_nao_respondidas(perguntas, respostas) == []
+
+
+def test_perfil_completo_requer_nome_formacao_e_experiencia() -> None:
+    """A primeira etapa só é válida quando todos os campos têm valores reais."""
+    assert not perfil_completo("", "Computação", OPCOES_EXPERIENCIA[0])
+    assert not perfil_completo("Ana", "  ", OPCOES_EXPERIENCIA[0])
+    assert not perfil_completo("Ana", "Computação", EXPERIENCIA_NAO_SELECIONADA)
+    assert not perfil_completo("Ana", "Computação", "valor inválido")
+    assert perfil_completo("Ana", "Computação", OPCOES_EXPERIENCIA[0])
+
+
+def test_wizard_bloqueia_avanco_em_todas_as_etapas_obrigatorias() -> None:
+    """O wizard bloqueia etapa incompleta e só mostra resultados após responder."""
+    app = AppTest.from_file(str(caminho_sistema / "app.py"), default_timeout=20).run()
+    assert not app.exception
+    assert app.button[0].disabled
+    app.session_state["passo_atual"] = 4
+    app.run()
+    assert app.session_state["passo_atual"] == 1
+    assert app.button[0].disabled
+
+    app.text_input[0].set_value("Ana Silva")
+    app.text_input[1].set_value("Ciência da Computação")
+    app.run()
+    assert app.button[0].disabled
+
+    app.selectbox[0].set_value(OPCOES_EXPERIENCIA[0])
+    app.run()
+    assert not app.button[0].disabled
+
+    app.button[0].click().run()
+    assert not app.exception
+    assert app.radio and all(radio.value is None for radio in app.radio)
+    assert app.button[-1].disabled
+    app.session_state["passo_atual"] = 4
+    app.run()
+    assert app.session_state["passo_atual"] == 2
+
+    app.radio[0].set_value(4)
+    app.run()
+    assert app.button[-1].disabled
+    for radio in app.radio:
+        radio.set_value(4)
+    app.run()
+    assert not app.button[-1].disabled
+
+    app.button[-1].click().run()
+    assert not app.exception
+    assert app.radio and all(radio.value is None for radio in app.radio)
+    assert app.button[-1].disabled
+    app.session_state["passo_atual"] = 4
+    app.run()
+    assert app.session_state["passo_atual"] == 3
+
+    for radio in app.radio:
+        radio.set_value(4)
+    app.run()
+    assert not app.button[-1].disabled
+    app.button[-1].click().run()
+
+    assert not app.exception
+    assert app.session_state["passo_atual"] == 4
 
 
 # ---------------------------------------------------------------------------

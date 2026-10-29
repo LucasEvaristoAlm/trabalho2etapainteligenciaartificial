@@ -35,6 +35,24 @@ from roadmap import (
 )
 
 LIKERT_VALORES = (1, 2, 3, 4, 5)
+VERSAO_QUESTIONARIO = 3
+EXPERIENCIA_NAO_SELECIONADA = "Selecione uma opção..."
+OPCOES_EXPERIENCIA = (
+    "Nenhuma / Transição de Carreira",
+    "Menos de 1 ano (estágio / início de carreira)",
+    "1 a 2 anos",
+    "3 a 5 anos",
+    "Mais de 5 anos",
+)
+
+
+def perfil_completo(nome: str, formacao: str, experiencia: str) -> bool:
+    """Valida o preenchimento obrigatório da primeira etapa do assistente."""
+    return bool(
+        nome.strip()
+        and formacao.strip()
+        and experiencia in OPCOES_EXPERIENCIA
+    )
 
 
 def perguntas_nao_respondidas(
@@ -59,14 +77,21 @@ def obter_base_conhecimento() -> dict[str, Any]:
 def inicializar_estado(base: dict[str, Any]) -> None:
     """Garante que todas as chaves necessarias existam no st.session_state."""
     perguntas = base.get("perguntas", [])
-    if st.session_state.get("versao_questionario") != 2:
+    if st.session_state.get("versao_questionario") != VERSAO_QUESTIONARIO:
         st.session_state.respostas_afinidade = {
             p["id"]: None for p in perguntas if p.get("passo") == 2
         }
         st.session_state.respostas_objetivos = {
             p["id"]: None for p in perguntas if p.get("passo") == 3
         }
-        st.session_state.versao_questionario = 2
+        perfil_existente = st.session_state.get("perfil_pessoal", {})
+        st.session_state.perfil_pessoal = {
+            "nome": "",
+            "formacao": "",
+            **perfil_existente,
+            "experiencia": EXPERIENCIA_NAO_SELECIONADA,
+        }
+        st.session_state.versao_questionario = VERSAO_QUESTIONARIO
 
     if "passo_atual" not in st.session_state:
         st.session_state.passo_atual = 1
@@ -75,7 +100,7 @@ def inicializar_estado(base: dict[str, Any]) -> None:
         st.session_state.perfil_pessoal = {
             "nome": "",
             "formacao": "",
-            "experiencia": "Nenhuma / Transição",
+            "experiencia": EXPERIENCIA_NAO_SELECIONADA,
         }
 
     if "respostas_afinidade" not in st.session_state:
@@ -106,7 +131,7 @@ def reiniciar_aplicacao(base: dict[str, Any]) -> None:
     st.session_state.perfil_pessoal = {
         "nome": "",
         "formacao": "",
-        "experiencia": "Nenhuma / Transição",
+        "experiencia": EXPERIENCIA_NAO_SELECIONADA,
     }
     st.session_state.respostas_afinidade = {
         p["id"]: None for p in base.get("perguntas", []) if p.get("passo") == 2
@@ -474,7 +499,7 @@ def passo_1_perfil_pessoal() -> None:
     """Renderiza o Passo 1: Informacoes basicas do perfil do usuario."""
     st.subheader("Passo 1: Identificacao do Perfil")
     st.write(
-        "Compartilhe algumas informações para personalizar o relatório. Os campos são opcionais."
+        "Preencha os dados básicos para personalizar seu relatório antes de continuar."
     )
 
     perfil = st.session_state.perfil_pessoal
@@ -482,31 +507,25 @@ def passo_1_perfil_pessoal() -> None:
     col1, col2 = st.columns(2)
     with col1:
         nome = st.text_input(
-            "Nome (opcional):",
+            "Nome completo *",
             value=perfil.get("nome", ""),
             placeholder="Ex.: Maria Silva",
         )
     with col2:
         formacao = st.text_input(
-            "Curso ou formação (opcional):",
+            "Curso ou formação *",
             value=perfil.get("formacao", ""),
             placeholder="Ex.: Ciência da Computação",
         )
 
-    opcoes_exp = [
-        "Nenhuma / Transição de Carreira",
-        "Menos de 1 ano (estágio / início de carreira)",
-        "1 a 2 anos",
-        "3 a 5 anos",
-        "Mais de 5 anos",
-    ]
+    opcoes_exp = [EXPERIENCIA_NAO_SELECIONADA, *OPCOES_EXPERIENCIA]
     idx_exp = (
         opcoes_exp.index(perfil.get("experiencia"))
         if perfil.get("experiencia") in opcoes_exp
         else 0
     )
     experiencia = st.selectbox(
-        "Experiência profissional em TI:",
+        "Experiência profissional em TI *",
         options=opcoes_exp,
         index=idx_exp,
     )
@@ -517,13 +536,23 @@ def passo_1_perfil_pessoal() -> None:
         "experiencia": experiencia,
     }
     st.caption(
-        "Os dados de perfil ficam apenas nesta sessão e não alteram a pontuação das trilhas."
+        "Os dados de perfil ficam apenas nesta sessão e não alteram a pontuação das trilhas. "
+        "Todos os campos desta etapa são obrigatórios."
     )
+
+    perfil_valido = perfil_completo(nome, formacao, experiencia)
+    if not perfil_valido:
+        st.warning("Preencha seu nome, curso/formação e experiência profissional para avançar.")
 
     st.write("")
     col_dir, col_prox = st.columns([8, 2])
     with col_prox:
-        if st.button("Proximo: Afinidades ->", type="primary", use_container_width=True):
+        if st.button(
+            "Proximo: Afinidades ->",
+            type="primary",
+            use_container_width=True,
+            disabled=not perfil_valido,
+        ):
             st.session_state.passo_atual = 2
             st.rerun()
 
@@ -932,7 +961,44 @@ def main() -> None:
     inicializar_estado(base)
 
     passo = st.session_state.passo_atual
+    aviso_validacao = None
+    if passo > 1 and not perfil_completo(
+        st.session_state.perfil_pessoal.get("nome", ""),
+        st.session_state.perfil_pessoal.get("formacao", ""),
+        st.session_state.perfil_pessoal.get("experiencia", ""),
+    ):
+        passo = 1
+        aviso_validacao = "Preencha os campos obrigatórios do perfil antes de continuar."
+    elif passo > 2:
+        perguntas_passo2 = [
+            p for p in base.get("perguntas", []) if p.get("passo") == 2
+        ]
+        pendentes = perguntas_nao_respondidas(
+            perguntas_passo2, st.session_state.respostas_afinidade
+        )
+        if pendentes:
+            passo = 2
+            aviso_validacao = (
+                f"Responda às {len(pendentes)} pergunta(s) de interesse antes de continuar."
+            )
+
+    if passo > 3:
+        perguntas_passo3 = [
+            p for p in base.get("perguntas", []) if p.get("passo") == 3
+        ]
+        pendentes = perguntas_nao_respondidas(
+            perguntas_passo3, st.session_state.respostas_objetivos
+        )
+        if pendentes:
+            passo = 3
+            aviso_validacao = (
+                f"Responda às {len(pendentes)} pergunta(s) de objetivo antes de ver o resultado."
+            )
+
+    st.session_state.passo_atual = passo
     renderizar_cabecalho(passo)
+    if aviso_validacao:
+        st.warning(aviso_validacao)
 
     if passo == 1:
         passo_1_perfil_pessoal()
